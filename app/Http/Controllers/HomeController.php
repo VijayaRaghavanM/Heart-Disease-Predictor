@@ -23,9 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $id = \Auth::user()->id;
-        return view('home',compact('id'));
+        $id = \Auth::id();
+        $tests = \Auth::user()->tests;
+        return view('home',compact('id','tests'));
     }
+
 
 
 }
